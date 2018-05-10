@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SkinDemo</string>
+    <string name="skin_demo_host">hostString</string>
+</resources>

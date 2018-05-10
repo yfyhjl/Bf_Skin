@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <me.lxw.dtl.skin.view.BfTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Host or skin"
+        app:skinEnable="true"
+        android:textColor="@drawable/textcolor_select"/>
+
+    <me.lxw.dtl.skin.view.BfImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/abc"
+        app:skinEnable="true"
+        android:text="hello world"/>
+</LinearLayout>

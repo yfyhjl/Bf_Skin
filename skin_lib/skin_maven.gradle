@@ -1,0 +1,39 @@
+apply plugin: 'maven'
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives androidSourcesJar
+//    archives androidJavadocsJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://192.168.204.208:8081/nexus/content/repositories/bfLibs/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            pom.project {
+                name 'skin'
+                version '1.0.0'
+                artifactId 'skin'
+                groupId 'com.storm'
+                packaging 'aar'
+                description 'skin'
+            }
+        }
+    }
+}

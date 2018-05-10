@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="style1">
+        <item name="android:background">@mipmap/abc</item>
+        <item name="android:textColor">@color/color_ff00ff</item>
+    </style>
+</resources>
